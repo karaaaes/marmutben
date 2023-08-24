@@ -1,0 +1,34 @@
+
+.stock-selector {
+    display: flex;
+    align-items: center;
+ }
+
+ .stock-input {
+    width: 50px;
+    text-align: center;
+ }
+
+ .stock-button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+ }
+ .zoom-effect {
+ position: relative;
+ overflow: hidden;
+ transition: transform 0.3s ease-in-out;
+}
+
+.zoom-effect img {
+ display: block;
+ width: 100%;
+ height: auto;
+}
+
+.zoom-effect:hover {
+ transform: scale(1.1);
+ z-index: 1;
+}
