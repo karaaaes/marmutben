@@ -10,9 +10,12 @@
    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
    <!-- site metas -->
    <title>MARMUTBEN | Jual Beli Marmut Terpercaya</title>
-   <meta name="keywords" content="">
+   <meta name="keywords" content="marmut murah, jual marmut 2023, marmut terdekat, marmutben">
    <meta name="description" content="Jual Beli Marmut Terpercaya - Bekasi">
-   <meta name="author" content="">
+   <meta name="author" content="Marmutben">
+   <meta name="robots" content="index, follow">
+   <meta name="abstract"
+      content="Selamat datang di marmutben.rakaeshardiansyah.my.id - Destinasi Terbaik untuk Marmut Impian Anda! Temukan koleksi eksklusif kami dari marmut yang lucu dan menggemaskan. Kami menyediakan marmut dengan beragam jenis, warna, dan karakter unik. Jelajahi sekarang dan bawa pulang teman berbulu Anda hari ini!">
    <!-- bootstrap css -->
    <link rel="stylesheet" href="css/bootstrap.min.css">
    <!-- style css -->
@@ -30,12 +33,12 @@
    <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
-      <style>
-         .btn-primary:hover {
-     background-color: #ffc107 !important;
-     border-color: #ffc107 !important;
-}
-      </style>
+   <style>
+      .btn-primary:hover {
+         background-color: #ffc107 !important;
+         border-color: #ffc107 !important;
+      }
+   </style>
 </head>
 <!-- body -->
 
@@ -56,7 +59,7 @@ function getBaseUrl() {
    }
 }
 ?>
-   <header>
+   <header class="fixed-top">
       <!-- header inner -->
       <div class="header">
          <div class="header_midil">
@@ -81,7 +84,7 @@ function getBaseUrl() {
             <div class="container">
                <div class="row">
                   <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8">
-                     <nav class="navigation navbar navbar-expand-md navbar-dark ">
+                     <nav class="navigation navbar navbar-expand-md navbar-dark">
                         <button class="navbar-toggler" type="button" data-toggle="collapse"
                            data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false"
                            aria-label="Toggle navigation">
@@ -97,6 +100,9 @@ function getBaseUrl() {
                               </li>
                               <li class="nav-item">
                                  <a class="nav-link" href="ongkir.php">Cek Ongkir</a>
+                              </li>
+                              <li class="nav-item">
+                                 <a class="nav-link" href="paket.php">Cek Paket Marmut</a>
                               </li>
                            </ul>
                         </div>

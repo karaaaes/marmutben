@@ -16,7 +16,34 @@
       border: none;
       border-radius: 50%;
    }
+
+   .whatsapp {
+      display: none;
+      position: fixed;
+      bottom: 10px; /* Mengatur jarak dari bawah ke 20px */
+      left: 20px; /* Mengatur jarak dari kiri ke 20px */
+      z-index: 99;
+      cursor: pointer;
+      padding: 10px;
+      color: #fff;
+      border: none;
+      height: 70px;
+      width: 70px;
+   }
+
+
+   .kategori {
+    padding-top: 70px;
+}
+
+/* Media query untuk layar dengan lebar lebih dari 768px (desktop) */
+@media (min-width: 768px) {
+    .kategori {
+        margin-top: 80px;
+    }
+}
 </style>
+<section class="kategori">
 <!-- six_box section -->
 <div id="project" class="project" style="padding: 50px 0 30px 0 !important;">
    <div class="container">
@@ -90,6 +117,8 @@
    </div>
    <!-- end six_box section -->
    <button id="scrollToTopBtn" class="scroll-to-top">Scroll to Top</button>
+   <!-- end six_box section -->
+   <a href="https://api.whatsapp.com/send?phone=6287780605997"><img src="images/whatsapp.webp" id="whatsapp" class="whatsapp" alt=""></a>
 </div>
 <div id="project" class="project">
    <!-- Anakan Section -->
@@ -364,7 +393,7 @@
       </div>
       <div class="row">
          <?php 
-         $dataMarmutBuntingHias = getKategoriMarmut(5);
+         $dataMarmutBuntingHias = getKategoriMarmut(6);
          if (!empty($dataMarmutBuntingHias)) {
             foreach ($dataMarmutBuntingHias as $marmutBuntingHias) {
                $finalPrice = number_format($marmutBuntingHias['harga'], 0, '.', '.');
@@ -410,11 +439,13 @@
       <img src="images/big-banner.jpg" alt="#" />
    </div>
    <!-- end fashion section -->
+   
    <!-- promo section -->
    <?php
       include('templates/promo.php');
    ?>
    <!-- end promo section -->
+</section>
    <script>
       document.querySelector('a[href="#myDiv"]').addEventListener('click', function (e) {
          e.preventDefault();
@@ -434,6 +465,10 @@
             scrollToTopBtn.style.display = "none";
          }
       });
+
+      const whatsapp = document.getElementById("whatsapp");
+      // Tampilkan atau sembunyikan tombol berdasarkan posisi scroll
+      whatsapp.style.display = "block";
 
       // Fungsi untuk menggulir ke atas
       scrollToTopBtn.addEventListener("click", () => {

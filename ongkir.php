@@ -2,6 +2,35 @@
    include('templates/header.php');
    include('core/core_functions.php');
 ?>
+
+<style>
+   .whatsapp {
+      display: none;
+      position: fixed;
+      bottom: 10px; /* Mengatur jarak dari bawah ke 20px */
+      left: 20px; /* Mengatur jarak dari kiri ke 20px */
+      z-index: 99;
+      cursor: pointer;
+      padding: 10px;
+      color: #fff;
+      border: none;
+      height: 70px;
+      width: 70px;
+   }
+
+   .ongkir {
+      padding-top: 40px;
+   }
+
+   /* Media query untuk layar dengan lebar lebih dari 768px (desktop) */
+   @media (min-width: 768px) {
+      .ongkir {
+        margin-top: 80px;
+      }
+   }
+</style>
+
+<section class="ongkir">
 <div id="project" class="project">
    <!-- Detail Beli Section -->
    <div class="container" id="anakanSection">
@@ -59,11 +88,14 @@
          <div class="col-md-12">
             <div class="form-group">
                <p>Daerah mu tidak ada di list ? <br/>
-               Hubungi Admin <a href="https://api.whatsapp.com/send?phone=6287780605997&text=Halo%20Admin%20saya%20ingin%20bertanya%20ongkir" style="color:blue !important;">DISINI</a></p>
+               Hubungi Admin <a href="https://api.whatsapp.com/send?phone=6287780605997&text=Halo%20Admin%20saya%20ingin%20bertanya%20ongkir" 
+               target="_blank" style="color:blue !important;">DISINI</a></p>
             </div>
          </div>
       </div>
       <hr class="mt-5" />
+      <!-- end six_box section -->
+<a href="https://api.whatsapp.com/send?phone=6287780605997"><img src="images/whatsapp.webp" id="whatsapp" class="whatsapp" alt=""></a>
    </div>
    <!-- End Detail Beli Section -->
    <!-- news section -->
@@ -71,8 +103,14 @@
    include('templates/promo.php');
    ?>
    <!-- end news section -->
+</section>
+
 
    <script>
+      const whatsapp = document.getElementById("whatsapp");
+      // Tampilkan atau sembunyikan tombol berdasarkan posisi scroll
+      whatsapp.style.display = "block";
+
       var wilayahSelect = document.getElementById("wilayahSelect");
       var wilayahKecilSelect = document.getElementById("wilayahKecilSelect");
       var ongkirCODInput = document.getElementById("ongkirCOD");

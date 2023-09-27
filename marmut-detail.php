@@ -10,9 +10,49 @@
    }
    $finalPrice = number_format($dataDetailMarmut[0]['harga'], 0, '.', '.');
    $finalName = str_replace(" ", "%20", $dataDetailMarmut[0]['jenis_marmut']);
-  
+
+   $sql = "
+      SELECT value FROM t_marmutben_config WHERE id = 1
+   ";
+   $executeQuery = mysqli_query($conn, $sql);
+   $dataConfig = mysqli_fetch_array($executeQuery);
 ?>
 <link rel="stylesheet" href="css/marmut-detail-style.css">
+<style>
+   .marmut-detail {
+      padding-top: 40px;
+   }
+
+   /* Media query untuk layar dengan lebar lebih dari 768px (desktop) */
+   @media (min-width: 768px) {
+      .marmut-detail {
+        margin-top: 80px;
+      }
+   }
+</style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+   $(document).ready(function () {
+      // Mendapatkan ID dan kategori dari URL
+      var urlParams = new URLSearchParams(window.location.search);
+      var id = urlParams.get('id');
+      var categories = urlParams.get('categories');
+
+      // Mengeksekusi AJAX saat halaman dimuat
+      $.ajax({
+         type: "POST",
+         url: "hit.php?id="+"id&categories="+categories, // Ganti dengan URL Anda
+         data: {
+            id: id,
+            categories: categories
+         },
+         success: function (response) {
+            $("#marmutDetails").html(response);
+         }
+      });
+   });
+</script>
+<section class="marmut-detail">
 <div id="project" class="project">
    <!-- Detail Beli Section -->
    <div class="container" id="anakanSection">
@@ -52,10 +92,13 @@
                <p><?php echo $dataDetailMarmut[0]['description']; ?></p>
 
                <form action="core/core_functions.php" method="post" enctype="multipart/form-data">
+                  <input type="text" value="<?= $dataConfig[0]; ?>" name="email_notifications" hidden>
                   <div class="stock-selector mt-3 mb-4 justify-content-center">
                      <btn class="stock-button minus-button mr-3"
                         style="background-color: #183661;border-color: #183661;">-</btn>
                      <input type="text" name="nama_marmut" value="<?php echo $dataDetailMarmut[0]['jenis_marmut']; ?>"
+                        hidden>
+                     <input type="text" name="kategori_marmut" value="<?php echo $dataDetailMarmut[0]['categories']; ?>"
                         hidden>
                      <input type="text" name="harga_marmut" value="<?php echo $originalPrice; ?>" hidden>
                      <input class="stock-input" name="jumlah" type="number" value="1" min="1">
@@ -88,7 +131,6 @@
                   </div>
                </div>
                <!-- End Promo Section -->
-
             </div>
          </div>
          <!-- End Description Content Section -->
@@ -96,6 +138,8 @@
       <hr class="mt-5" />
    </div>
    <!-- End Detail Beli Section -->
+
+</section>
 
    <!-- news section -->
    <?php 
@@ -165,7 +209,7 @@
                   hargaMarmutInput.value = hargaMarmut;
 
                   discountedPrice.innerHTML =
-                     `Harga Baru: Rp. ${hargaMarmut.toLocaleString('id-ID', { style: 'currency', currency: 'IDR' })}`;
+                     `Harga Baru: ${hargaMarmut.toLocaleString('id-ID', { style: 'currency', currency: 'IDR' })}`;
                } else {
                   hargaMarmutInput.value = originalHargaMarmut;
                }

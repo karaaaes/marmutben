@@ -2,6 +2,34 @@
 include('templates/header.php');
 include('core/core_functions.php');
 ?>
+<style>
+      /* Default padding untuk mobile */
+.banner_main {
+    padding-top: 100px;
+}
+
+/* Media query untuk layar dengan lebar lebih dari 768px (desktop) */
+@media (min-width: 768px) {
+    .banner_main {
+        margin-top: 80px;
+    }
+}
+.whatsapp {
+      display: none;
+      position: fixed;
+      bottom: 10px; /* Mengatur jarak dari bawah ke 20px */
+      left: 20px; /* Mengatur jarak dari kiri ke 20px */
+      z-index: 99;
+      cursor: pointer;
+      padding: 10px;
+      color: #fff;
+      border: none;
+      height: 70px;
+      width: 70px;
+   }
+</style>
+
+
 <!-- banner -->
 <section class="banner_main">
    <div class="container">
@@ -74,6 +102,10 @@ include('core/core_functions.php');
    </div>
 </div>
 <!-- end six_box section -->
+
+<!-- end six_box section -->
+<a href="https://api.whatsapp.com/send?phone=6287780605997"><img src="images/whatsapp.webp" id="whatsapp" class="whatsapp" alt=""></a>
+
 <!-- project section -->
 <div id="project" class="project">
    <div class="container">
@@ -135,3 +167,9 @@ include('core/core_functions.php');
    <?php
    include('templates/footer.php');
    ?>
+
+   <script>
+      const whatsapp = document.getElementById("whatsapp");
+      // Tampilkan atau sembunyikan tombol berdasarkan posisi scroll
+      whatsapp.style.display = "block";
+   </script>

@@ -23,6 +23,7 @@
                      <h3>Information</h3>
                      <p>Untuk informasi lebih lanjut dapat mengunjungi :
                         <br/>Instagram : <a href="https://www.instagram.com/marmut.murah/" style="color: red;">Klik ini</a>
+                        <br/>Whatsapp : <a href="https://api.whatsapp.com/send?phone=6287780605997" style="color: red;">Klik ini</a>
                      </p>
                   </div>
                </div>

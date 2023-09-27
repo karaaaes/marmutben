@@ -830,7 +830,7 @@ position: absolute;
   .news_img_best {
      width: 100%;
      max-width: 340px;
-     height: 260px;
+     height: 240px;
      overflow: hidden;
      margin: 0 auto; /* Center horizontally */
      display: flex;
